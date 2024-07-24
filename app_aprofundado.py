@@ -1,5 +1,7 @@
 import os #importar a funcao de limpar a tela da biblioteca
 
+restaurantes = []
+
 def exibir_nome_do_programa():
     print ('=================================')
     print('Sabor Express')
@@ -23,9 +25,9 @@ def escolher_opcao():
         # se aparecer 50 opcoes, teriamos que criar 50 linhas de opcoes, vamos simplicar isso usando funcoes... tirar o "print('Encerrando o programa')"
 
         if opcao_escolhida == 1:
-            print('Cadastrar restaurante')
+            cadastrar_novo_restaurante()
         elif opcao_escolhida == 2:
-            print('Listar restaurantes')
+            listar_restaurante()
         elif opcao_escolhida == 3:
             print('Ativar restaurante')
         elif opcao_escolhida == 4:
@@ -46,9 +48,28 @@ def finalizar_app():
     os.system('cls') #limpar a tela
     print('Finalizando o app')
 
+def voltar_ao_menu_principal():
+    input('Digite uma tecla para voltar ao menu')
+    main()
+
 def opcao_invalida():
     print('Opção inválida!\n')
-    main()
+    voltar_ao_menu_principal()
+
+def cadastrar_novo_restaurante():
+     os.system('cls')
+     print('Cadastro de novos restaurantes\n')
+     nome_do_restaurante = input('Digite o nome do restaurante: ')
+     restaurantes.append(nome_do_restaurante)
+     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
+     voltar_ao_menu_principal()
+
+def listar_restaurante():
+     os.system('cls')
+     print('Exibindo os restaurantes\n')
+     for i in restaurantes:
+        print('- ' + i)
+     voltar_ao_menu_principal() 
 
 # para falar que esse sera o arq principal e nao podera ser importado por outros arq python
 
