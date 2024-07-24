@@ -39,3 +39,5 @@ print('Organo - plataforma de organogramas para empresas\n')
 Departamento = input('Digite seu departamento: ')
 Responsavel = input('Digite seu responsável: ')
 print(f'O departamento de {Departamento} é liderado por {Responsavel}.')
+
+
